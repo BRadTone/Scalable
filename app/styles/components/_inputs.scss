@@ -1,0 +1,36 @@
+.input-wrapper {
+  display: flex;
+
+  input[type=checkbox],
+  input[type=radio] {
+    visibility: hidden;
+    + label:before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 2px;
+      @include size(22px, 22px);
+      @include background-image(checkbox1, png);
+    }
+    &:checked + label:before {
+      @include background-image(checkbox2, png);
+    }
+  }
+
+  label {
+    position: relative;
+    display: block;
+    color: $c-white;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+}
+
+input,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

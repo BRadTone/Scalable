@@ -1,0 +1,43 @@
+@import "../helpers/_mixins";
+body {
+  /*
+  https://css-tricks.com/css-font-size/
+  'The most popular method in working with em values is to set the font-size on the body to 62.5%. Because the default browser font-size is 16px, this makes it 10px (without hard-setting it to 10px, which wouldn't cascade). Using 10 as a multiplier is much easier than using 16. This way, you need a font size of 18px? Use font-size: 1.8em.'
+   */
+  font-size: $font-size;
+  //font-size: 62.5%;
+  font-family: 'Roboto', serif;
+
+  @include bp-sm {
+    font-size: $font-size-sm;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $c-text;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.3) inset;
+
+  transition: background-color 5000s ease-in-out .5s;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  &:active, &:focus {
+    text-decoration: none;
+  }
+}
+
+*::selection {
+  background: $c-main + 20;
+  color: $c-white !important;
+}

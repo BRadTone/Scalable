@@ -1,0 +1,112 @@
+/* BREAKPOINTS
+window width ranges based on bootstrap
+*/
+$xxs: 400px !default;
+$xs: 768px !default;
+$sm: 992px !default;
+$md: 1200px !default;
+$lg: 1400px !default;
+
+@mixin bp-custom($value) {
+  @media only screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin bp-xxs {
+  @media only screen and (max-width: $xxs) {
+    @content;
+  }
+}
+@mixin bp-xs {
+  @media only screen and (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (max-width: $lg) {
+    @content;
+  }
+}
+
+/*
+  BACKGROUND-IMAGE NAME
+*/
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+
+@mixin background-image($name, $fallback-extension : 'png') {
+  background: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+  background-size: contain;
+}
+
+@mixin mask-image($name, $fallback-extension : 'png') {
+  mask: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+  -webkit-mask: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/*
+  SIZE
+*/
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin before($name, $fallback-extension : 'png',$width:20px, $height:20px) {
+  &:before {
+    content: '';
+    position: absolute;
+    background: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+
+@mixin after($name, $fallback-extension : 'png', $width:20px, $height:20px) {
+  &:after {
+    content: '';
+    position: absolute;
+    background: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+   transform: translateY(-50%);
+  }
+}

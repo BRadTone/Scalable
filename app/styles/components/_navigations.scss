@@ -1,0 +1,42 @@
+//owl controls
+.owl-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 99;
+
+  .owl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 1px solid $c-dark;
+    margin: 5px;
+    background-color: transparent;
+    &.active {
+      background-color: $c-dark;
+    }
+  }
+}
+
+%controls_pos {
+  text-indent: -10000000px;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  height: 35px;
+  width: 30px;
+  transform: translateY(-50%);
+}
+.owl-prev {
+  @include background-image('owl_prev');
+  @extend %controls_pos;
+  left: 0;
+
+}
+.owl-next {
+  @include background-image('owl_next');
+  @extend %controls_pos;
+  right: 0;
+}

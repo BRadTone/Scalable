@@ -1,0 +1,26 @@
+$c-main: rgba(200, 51, 72, 1);
+$c-secondary: rgba(128, 3, 0, 1);
+$c-text: rgb(37, 37, 37);
+$c-white: rgba(255,255,255,1);
+$c-dark: rgb(80,80,80);
+
+
+$colors: (
+        $c-main,
+        $c-secondary $c-text,
+        $c-white,
+        $c-dark,
+);
+
+
+$font-size: 10px;
+
+$transition-default: .4s ease all;
+$transition-fast: .2s ease all;
+
+$font-size: 10px;
+$font-size-sm: 13px;
+
+
+$header-height: 95px;
+$footer-height: 28px;
