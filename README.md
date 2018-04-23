@@ -1,27 +1,27 @@
 # Scalable
 
-Boilerplate for simple web pages.
-Main goal - achive usefull and scalable sass files architecture.
-## Getting Started
+Boilerplate for simple web pages, including usefull @mixins and variables
 
-SCSS structure
+Main goal - achive reusable and scalable sass files architecture.
+
+## SCSS structure
 <pre>
 ├── __GLOBAL            // @include(<all files>)
-├── _base 
+├── _base
 |	├── _projectSetUp.scss
 |	├── _reset.scss
 |	└── _typography.scss
-├── _components 
+├── _components
 |	├── _buttons.scss
 |	├── _inputs.scss
 |	├── _navigations.scss
 |	└── _popUp.scss
-├── _components 
+├── _components
 |	├── _buttons.scss
 |	├── _inputs.scss
 |	├── _navigations.scss
 |	└── _popUp.scss
-├── _helpers 
+├── _helpers
 |	├── _functions.scss
 |	├── _mixins.scss
 |	├── _placeholders.scss
@@ -31,26 +31,6 @@ SCSS structure
 ├── _pages
 	└── _index.scss
 </pre>
-
-### Prerequisites
-
-Node & npm
-
-
-### Installing
-
-Install pre & post css processors.
-
-```
-npm install
-```
-
-
-## Authors
-
-* **Rad Bialowas** 
-###
-
 
 
 
