@@ -32,5 +32,26 @@ Main goal - achive reusable and scalable sass files architecture.
 	└── _index.scss
 </pre>
 
+-----
 
+##### Example:
 
+```
+@mixin before($name, $fallback-extension : 'png',$width:20px, $height:20px) {
+  &:before {
+    content: '';
+    position: absolute;
+    background: url('#{$image-path}/#{$name}.#{$fallback-extension}') no-repeat center;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+```
+
+Usage:
+```
+.need-icon {
+    @include before('file_name');
+}
+```
